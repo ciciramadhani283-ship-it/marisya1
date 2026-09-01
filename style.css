@@ -1,0 +1,1228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --ungu: #7654c8;
+    --ungu-muda: #a58be5;
+    --ungu-soft: #f3efff;
+    --gelap: #29233d;
+    --abu: #716c7d;
+    --putih: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fcfbff;
+    color: var(--gelap);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 25px rgba(70,45,130,.08);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 15px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ungu);
+}
+
+.logo span {
+    color: #c0a9ff;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.menu a {
+    color: var(--gelap);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: white;
+    background: var(--ungu);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 88vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.small-title {
+    color: var(--ungu);
+    font-weight: 800;
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 1;
+    color: var(--ungu);
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero-text > p:not(.small-title) {
+    color: var(--abu);
+    max-width: 650px;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+
+    color: var(--ungu);
+    background: white;
+    border: 2px solid #e5dcff;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(70,45,130,.15);
+}
+
+.btn:active {
+    transform: scale(.9);
+}
+
+.purple-btn {
+    color: white;
+    background: var(--ungu);
+    border-color: var(--ungu);
+}
+
+
+/* =========================================
+   HERO FOTO
+========================================= */
+
+.hero-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-photo img {
+    position: relative;
+
+    width: min(370px, 80vw);
+    height: 450px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 45% 45% 30% 30%;
+
+    box-shadow: 0 25px 60px rgba(70,45,130,.25);
+
+    z-index: 2;
+
+    animation: fotoNaik 4s ease-in-out infinite;
+}
+
+.photo-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #d9ccff;
+
+    border-radius: 50%;
+    filter: blur(20px);
+
+    z-index: 1;
+}
+
+@keyframes fotoNaik {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.purple-bg {
+    max-width: none;
+    background: var(--ungu-soft);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--ungu);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    margin: 5px 0;
+    color: var(--gelap);
+}
+
+.section-title p {
+    color: var(--abu);
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 420px;
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 50px rgba(70,45,130,.18);
+
+    display: block;
+    margin: auto;
+
+    transition: .5s;
+}
+
+.about-photo img:hover {
+    transform: rotate(-2deg) scale(1.03);
+}
+
+.about-content h3 {
+    color: var(--ungu);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: var(--abu);
+    margin-bottom: 15px;
+}
+
+.identity {
+    margin-top: 25px;
+}
+
+.identity div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 11px 15px;
+    margin-bottom: 8px;
+
+    background: #f6f2ff;
+    border-radius: 12px;
+}
+
+.identity b {
+    color: var(--ungu);
+}
+
+.identity span {
+    color: var(--abu);
+    text-align: right;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-section {
+    padding: 20px 25px 90px;
+}
+
+.stats {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 28px 15px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(70,45,130,.10);
+
+    transition: .3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+
+.stat-icon {
+    font-size: 35px;
+}
+
+.stat-card h3 {
+    color: var(--ungu);
+    font-size: 27px;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 12px 30px rgba(70,45,130,.09);
+
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+}
+
+.skill-icon {
+    font-size: 35px;
+}
+
+.skill-card h3 {
+    color: var(--ungu);
+    margin: 8px 0;
+}
+
+.skill-card p {
+    color: var(--abu);
+    font-size: 14px;
+    min-height: 65px;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    background: #eee9ff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.progress div {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #7654c8,
+        #b8a0f3
+    );
+
+    border-radius: 10px;
+}
+
+.skill-card > span {
+    display: block;
+
+    text-align: right;
+
+    color: var(--ungu);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 25px;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: #ded2ff;
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 75px;
+
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 8px;
+    top: 5px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--ungu);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+
+    z-index: 2;
+}
+
+.timeline-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 10px 30px rgba(70,45,130,.09);
+
+    transition: .3s;
+}
+
+.timeline-card:hover {
+    transform: translateX(8px);
+}
+
+.timeline-card span {
+    color: var(--ungu);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.timeline-card h3 {
+    margin: 5px 0;
+
+    font-size: 21px;
+}
+
+.timeline-card p {
+    color: var(--abu);
+
+    font-size: 14px;
+}
+
+.active-timeline .timeline-card {
+    border: 2px solid #d9ccff;
+}
+
+
+/* =========================================
+   GAMES
+========================================= */
+
+.games-section {
+    max-width: none;
+
+    background: linear-gradient(
+        180deg,
+        #f3efff,
+        #ffffff
+    );
+}
+
+.games-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.game-card {
+    background: white;
+
+    padding: 30px 22px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(70,45,130,.12);
+
+    transition: .3s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+}
+
+.game-emoji {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.game-card h3 {
+    color: var(--ungu);
+    font-size: 22px;
+}
+
+.game-card p {
+    color: var(--abu);
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.game-card input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #e5dcff;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    margin-top: 10px;
+}
+
+.game-card input:focus {
+    border-color: var(--ungu);
+}
+
+.game-btn {
+    border: none;
+
+    padding: 11px 22px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    background: var(--ungu);
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 12px;
+
+    transition: .2s;
+}
+
+.game-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(70,45,130,.2);
+}
+
+.game-btn:active {
+    transform: scale(.9);
+}
+
+.game-result {
+    min-height: 25px;
+
+    color: var(--ungu) !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CLICK GAME
+========================================= */
+
+#clickScore {
+    font-size: 45px;
+    color: var(--ungu);
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   EMOJI GAME
+========================================= */
+
+.emoji-game {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.emoji-game button {
+    border: none;
+
+    background: #f5f1ff;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.emoji-game button:hover {
+    transform: scale(1.08);
+
+    background: #e9ddff;
+}
+
+
+/* =========================================
+   MOTIVASI
+========================================= */
+
+.motivation {
+    padding: 100px 25px;
+
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7654c8,
+        #a58be5
+    );
+}
+
+.motivation-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.motivation-content > span {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.motivation h2 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.motivation p {
+    opacity: .9;
+}
+
+.heart {
+    font-size: 45px;
+    margin-top: 20px;
+
+    animation: detak 1.5s infinite;
+}
+
+@keyframes detak {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================
+   THANK YOU
+========================================= */
+
+.thank-you {
+    padding: 100px 25px;
+
+    text-align: center;
+}
+
+.thank-you > div {
+    max-width: 700px;
+    margin: auto;
+}
+
+.thank-icon {
+    font-size: 55px;
+}
+
+.thank-you h2 {
+    color: var(--ungu);
+
+    font-size: 32px;
+
+    margin: 10px 0;
+}
+
+.thank-you p {
+    color: var(--abu);
+}
+
+.thank-you h3 {
+    color: var(--gelap);
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background: #241e35;
+}
+
+footer h3 {
+    color: #cbbaff;
+    font-size: 25px;
+}
+
+footer p {
+    color: #ddd;
+    font-size: 14px;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   EMOT BERTERBANGAN
+========================================= */
+
+.floating-emot {
+    position: fixed;
+
+    bottom: -60px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    animation: emotTerbang 7s linear forwards;
+}
+
+@keyframes emotTerbang {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(30px)
+            rotate(180deg)
+            scale(1);
+
+        opacity: .9;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            rotate(360deg)
+            scale(.8);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   GALERI TEMAN
+   MODEL SEPERTI GALERI DESA SERUNAI
+========================================= */
+
+.album-teman {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.foto-teman {
+    width: 100%;
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(70,45,130,.10);
+
+    transition: .4s;
+
+    cursor: pointer;
+}
+
+.foto-teman:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(70,45,130,.17);
+}
+
+
+/* FOTO GALERI */
+
+.foto-teman img {
+    display: block;
+
+    width: 100% !important;
+
+    height: 180px !important;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: .5s;
+}
+
+.foto-teman:hover img {
+    transform: scale(1.05);
+}
+
+
+/* CAPTION */
+
+.caption {
+    padding: 12px 10px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.caption h3 {
+    color: var(--ungu);
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+.caption p {
+    color: var(--abu);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+/* =========================================
+   GALERI TEMAN - UKURAN TIDAK TERLALU BESAR
+========================================= */
+
+.album-grid {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.album-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(70,45,130,.10);
+
+    transition: .3s;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+}
+
+/* UKURAN FOTO */
+.album-card img {
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* TEKS */
+.album-info {
+    padding: 12px;
+    text-align: center;
+}
+
+.album-info h3 {
+    color: var(--ungu);
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.album-info p {
+    color: var(--abu);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* TABLET */
+@media (max-width: 850px) {
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .album-card img {
+        height: 160px;
+    }
+}
+
+
+/* HP */
+@media (max-width: 600px) {
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .album-card img {
+        height: 120px;
+    }
+
+    .album-info {
+        padding: 8px;
+    }
+
+    .album-info h3 {
+        font-size: 12px;
+    }
+
+    .album-info p {
+        font-size: 9px;
+    }
+}
+
+/* =========================
+   RESPONSIVE UNTUK HP
+========================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    /* BAGIAN TENTANG / ABOUT */
+    .about,
+    .about-container,
+    .about-content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* FOTO */
+    .about-image,
+    .about img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 25px;
+        display: block;
+    }
+
+    /* JANGAN BUAT FOTO TERLALU KECIL */
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* TEKS */
+    .about-text {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    /* DATA DIRI */
+    .biodata,
+    .info-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .info-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .info-box span {
+        font-size: 15px;
+    }
+
+    /* JUDUL */
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    /* SEMUA SECTION */
+    section {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+}
+
+
+/* HP LEBIH KECIL */
+@media (max-width: 480px) {
+
+    nav ul {
+        gap: 8px 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .about,
+    .about-container,
+    .about-content {
+        padding: 15px;
+    }
+
+    .about img {
+        width: 150px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .info-box {
+        padding: 14px;
+    }
+
+    .info-box span {
+        font-size: 14px;
+    }
+}
